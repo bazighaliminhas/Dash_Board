@@ -13,10 +13,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 
-import { Page1Component } from './page1/page1.component';
-import { Page2Component } from './page2/page2.component';
-import { Page3Component } from './page3/page3.component';
-import { Page4Component } from './page4/page4.component';
+import { Page1Component } from './Pages/page1/page1.component';
+import { Page2Component } from './Pages/page2/page2.component';
+import { Page3Component } from './Pages/page3/page3.component';
+import { Page4Component } from './Pages/page4/page4.component';
 
 
 @NgModule({
