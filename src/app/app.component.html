@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
-  <!-- Sidebar -->
-  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+  <!-- Sidebar, only shown if not on login page -->
+  <mat-sidenav *ngIf="!isLoginPage" #sidenav mode="side" opened class="sidenav">
     <div class="logo-container">
       <img src="../assets/images/logo/Markhore.png" alt="Logo">
     </div>
@@ -14,15 +14,22 @@
 
   <!-- Main Content -->
   <mat-sidenav-content>
-    <!-- Top Bar -->
-    <mat-toolbar color="primary">
-      <button mat-icon-button (click)="sidenav.toggle()">
+    <!-- Top Bar, only shown if not on login page -->
+    <mat-toolbar *ngIf="!isLoginPage" color="primary">
+      <!-- Toggle Sidenav Button -->
+      <button mat-icon-button (click)="toggleSidenav()">
         <mat-icon>menu</mat-icon>
       </button>
+      <!-- Title -->
       <span class="title">Professional Dashboard</span>
-      <span class="spacer"></span> <!-- Spacer for pushing items to the right -->
-      <button mat-icon-button>
+      <span class="spacer"></span>
+      <!-- Settings Button -->
+      <button mat-icon-button (click)="openSettings()">
         <mat-icon>settings</mat-icon>
+      </button>
+      <!-- Logout Button, only shown if not on login page -->
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
       </button>
     </mat-toolbar>
 
