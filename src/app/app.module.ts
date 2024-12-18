@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient } from '@angular/common/http';  // Use provideHttpClient instead of HttpClientModule
 
 // Angular Material Imports
+import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -14,7 +15,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';  // Import the MatProgressSpinnerModule
 
+// Components
 import { Page1Component } from './Pages/page1/page1.component';
 import { Page2Component } from './Pages/page2/page2.component';
 import { Page3Component } from './Pages/page3/page3.component';
@@ -37,7 +40,7 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,  // Essential for Material components
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
@@ -46,11 +49,15 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule,
+    CommonModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideHttpClient(),  // Add this line to configure HttpClient
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

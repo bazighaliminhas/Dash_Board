@@ -1,5 +1,24 @@
-<!-- page1.component.html -->
-<div>
-    <h1>Page 1 Content</h1>
+<div class="products-container">
+  <mat-progress-spinner *ngIf="isLoading" mode="indeterminate"></mat-progress-spinner>
+
+  <div *ngIf="!isLoading && products.length === 0">
+    <p>No products available!</p>
   </div>
-  
+
+  <div *ngIf="!isLoading" class="product-grid">
+    <mat-card *ngFor="let product of products" class="product-card">
+      <mat-card-header>
+        <mat-card-title>{{ product.title }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="product.image" [alt]="product.title" />
+      <mat-card-content>
+        <p>Price: ${{ product.price }}</p>
+        <p>{{ product.description | slice:0:100 }}...</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary">View Details</button>
+        <button mat-button color="accent">Add to Cart</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
