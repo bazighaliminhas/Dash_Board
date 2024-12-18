@@ -5,7 +5,7 @@ import { Page2Component } from './Pages/page2/page2.component';
 import { Page3Component } from './Pages/page3/page3.component';
 import { Page4Component } from './Pages/page4/page4.component';
 import { LoginComponent } from './Pages/login/login.component';
-import { AuthGuard } from './auth.guard'; // Correctly importing AuthGuard with proper capitalization
+import { AuthGuard } from './Services/auth.guard'; // Correctly importing AuthGuard with proper capitalization
 
 const routes: Routes = [
   { path: 'page1', component: Page1Component, canActivate: [AuthGuard] },

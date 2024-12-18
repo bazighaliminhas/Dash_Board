@@ -22,6 +22,7 @@ import { Page4Component } from './Pages/page4/page4.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MatInputModule } from '@angular/material/input';
     Page2Component,
     Page3Component,
     Page4Component,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
