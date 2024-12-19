@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   // Default route
-  { path: '', redirectTo: '/page1', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   // Wildcard route for handling 404 errors
   { path: '**', redirectTo: '/login' }
